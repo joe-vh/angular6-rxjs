@@ -1,0 +1,21 @@
+<h2>My Cryptos</h2>
+
+<div>
+  <label>Crypto name:
+    <input #cryptoName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(cryptoName.value); cryptoName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="cryptos">
+  <li *ngFor="let crypto of cryptos">
+    <a routerLink="/detail/{{crypto.id}}">
+      <span class="badge">{{crypto.id}}</span> {{crypto.name}}
+    </a>
+    <button class="delete" title="delete crypto"
+    (click)="delete(crypto)">x</button>
+  </li>
+</ul>

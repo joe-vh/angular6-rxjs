@@ -1,0 +1,11 @@
+<h3>Top Cryptos</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let crypto of cryptos" class="col-1-4"
+      routerLink="/detail/{{crypto.id}}">
+    <div class="module crypto">
+      <h4>{{crypto.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-crypto-search></app-crypto-search>
